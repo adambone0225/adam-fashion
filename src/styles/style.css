@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&family=Roboto+Mono:wght@200;300;400;600;700&display=swap");
+div.wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+}
+
+.item {
+  display: flex;
+}
+
+.left {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.left .location img {
+  width: 2vw;
+}
+
+.center {
+  align-self: center;
+}
+.center h1 {
+  text-transform: uppercase;
+  font-weight: light;
+}
+
+.right {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+.right .icons {
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+  color: #777;
+}
+.right .icons .cartIcon {
+  position: relative;
+}
+.right .icons .cartIcon span {
+  background-color: #375cd7;
+  border-radius: 70%;
+  font-size: 12px;
+  width: 15px;
+  height: 15px;
+  color: #fff;
+  position: absolute;
+  top: -5px;
+  left: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  font-family: "Roboto Mono", monospace;
+  box-sizing: border-box;
+  margin: 0;
+  text-decoration: none;
+  text-transform: capitalize;
+}/*# sourceMappingURL=style.css.map */

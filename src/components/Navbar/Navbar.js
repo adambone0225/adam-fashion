@@ -5,19 +5,14 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { Link } from "react-router-dom";
-import "./navbar.css";
 
 const Navbar = () => {
   return (
     <header>
       <div className="wrapper">
         <section className="left">
-          <div className="item">
-            <img
-              src="/image/pin.png"
-              alt=""
-              style={{ width: "2vw", height: "60%", objectFit: "cover" }}
-            />
+          <div className="location">
+            <img src="/image/pin.png" alt="" />
             <KeyboardArrowDownIcon />
           </div>
           <div className="item">
@@ -36,7 +31,7 @@ const Navbar = () => {
           <SearchOutlinedIcon />
         </section>
         <section className="center">
-          <h1>AdamFashion</h1>
+          <h1>Adam's Fashion</h1>
         </section>
         <section className="right">
           <Link className="navBar-right" to="">
