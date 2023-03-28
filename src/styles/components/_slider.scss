@@ -1,0 +1,18 @@
+section.slider {
+  height: calc(100vh - 80px);
+
+  .container {
+    width: 300vw;
+    display: flex;
+    height: 100%;
+
+    img {
+      height: 100%;
+      width: 100vw;
+      object-fit: cover;
+    }
+  }
+  .backward {
+    position: absolute;
+  }
+}
