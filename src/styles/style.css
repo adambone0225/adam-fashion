@@ -56,10 +56,96 @@ div.wrapper {
   align-items: center;
 }
 
+footer {
+  margin: 3rem 4rem;
+}
+footer .top h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #2a2a2a;
+}
+footer .top p {
+  text-indent: 50px;
+}
+footer .item {
+  flex: 1 1 50px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  font-size: 16px;
+}
+footer .middle {
+  margin-top: 1rem;
+  display: flex;
+  gap: 50px;
+}
+footer .bottom img {
+  height: 40px;
+}
+
+section.slider {
+  height: calc(100vh - 80px);
+}
+section.slider .container {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: auto;
+  width: 800px;
+  height: 100%;
+  overflow: hidden;
+}
+section.slider .container div.slide {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+section.slider .container div.slide .img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.slider .control {
+  position: absolute;
+  top: 50%;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #fff;
+  cursor: pointer;
+}
+.slider .leftArrow {
+  left: 5px;
+}
+.slider .rightArrow {
+  right: -2px;
+}
+.slider .panel {
+  padding: 0.5rem;
+  border-radius: 5rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: relative;
+  top: 18rem;
+}
+.slider .panel .slider-dots {
+  height: 1rem;
+  width: 1rem;
+  display: inline-block;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 0 0.7rem;
+}
+
 * {
   font-family: "Roboto Mono", monospace;
   box-sizing: border-box;
   margin: 0;
   text-decoration: none;
   text-transform: capitalize;
+  color: inherit;
 }/*# sourceMappingURL=style.css.map */

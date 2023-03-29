@@ -1,0 +1,31 @@
+footer {
+  margin: 3rem 4rem;
+  .top {
+    h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      color: #2a2a2a;
+    }
+    p {
+      text-indent: 50px;
+    }
+  }
+  .item {
+    flex: 1 1 50px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    font-size: 16px;
+  }
+  .middle {
+    margin-top: 1rem;
+    display: flex;
+    gap: 50px;
+  }
+  .bottom {
+    img {
+      height: 40px;
+    }
+  }
+}
