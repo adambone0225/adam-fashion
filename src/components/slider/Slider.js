@@ -1,5 +1,6 @@
 import React from "react";
-import { useState } from "react";
+import Dot from "./Dot";
+import { useState, useRef, useEffect } from "react";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import slide1 from "./image/slide1.png";
@@ -9,6 +10,8 @@ import slide3 from "./image/slide3.png";
 let image = [slide1, slide2, slide3];
 
 const Slider = () => {
+  const timeRef = useRef(null);
+  const dotRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const goToPrevious = () => {
     const newIndex = currentIndex === 0 ? image.length - 1 : currentIndex - 1;
@@ -22,6 +25,17 @@ const Slider = () => {
   const switchByDot = (SlideIndex) => {
     setCurrentIndex(SlideIndex);
   };
+
+  useEffect(() => {
+    if (timeRef.current) {
+      clearTimeout(timeRef.current);
+    }
+    console.log("testing");
+    timeRef.current = setTimeout(() => {
+      goToNext();
+      return clearTimeout(timeRef.current);
+    }, 2000);
+  });
 
   return (
     <section className="slider">
@@ -48,15 +62,16 @@ const Slider = () => {
           ></div>
         </div>
         <div className="panel">
-          {image.map((_, index) => (
-            <span
-              key={index}
-              className="slider-dots"
-              onClick={() => {
-                switchByDot(index);
-              }}
-            ></span>
-          ))}
+          {image.map((_, index) => {
+            return (
+              <Dot
+                key={index}
+                index={index}
+                className="slider-dots"
+                slideSwitch={switchByDot}
+              />
+            );
+          })}
         </div>
       </div>
     </section>
