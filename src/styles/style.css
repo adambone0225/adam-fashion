@@ -141,6 +141,10 @@ section.slider .container div.slide .img {
   margin: 0 0.7rem;
 }
 
+.slider-dots.active {
+  transform: scale(1.5);
+}
+
 * {
   font-family: "Roboto Mono", monospace;
   box-sizing: border-box;
