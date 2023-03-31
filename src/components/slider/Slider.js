@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 import { useState, useRef, useEffect } from "react";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
@@ -16,10 +16,10 @@ const Slider = () => {
     const newIndex = currentIndex === 0 ? image.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     const newIndex = currentIndex === image.length - 1 ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
-  };
+  }, [currentIndex]);
 
   const switchByDot = (SlideIndex) => {
     setCurrentIndex(SlideIndex);
@@ -34,7 +34,7 @@ const Slider = () => {
       goToNext();
       return clearTimeout(timeRef.current);
     }, 2000);
-  });
+  }, [goToNext]);
 
   return (
     <section className="slider">
@@ -65,7 +65,7 @@ const Slider = () => {
             return (
               <span
                 className={
-                  currentIndex == index ? "slider-dots active" : "slider-dots"
+                  currentIndex === index ? "slider-dots active" : "slider-dots"
                 }
                 key={index}
                 onClick={(e) => {
