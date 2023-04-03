@@ -26,7 +26,7 @@ const Navbar = () => {
             <Link to="/products/1"> men</Link>
           </div>
           <div className="item">
-            <Link to="/products/1"> children</Link>
+            <Link to="/products/1"> kids</Link>
           </div>
           <SearchOutlinedIcon />
         </section>
