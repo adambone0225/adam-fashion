@@ -1,0 +1,18 @@
+:root {
+  --neon-blue: #0061ffff;
+  --electric-blue: #60efffff;
+}
+
+@mixin blue-button {
+  border: 0.1rem solid var(--neon-blue);
+  background-color: rgb(6, 5, 5);
+  color: #fff;
+  font-weight: bold;
+
+  border-radius: 0.5rem;
+  transition: all 0.3s linear;
+  &:hover {
+    background: rgba(255, 165, 0, 0.2);
+    color: var(--orange);
+  }
+}
