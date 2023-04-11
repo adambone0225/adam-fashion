@@ -1,47 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&family=Roboto+Mono:wght@200;300;400;600;700&display=swap");
-div.wrapper {
+header div.wrapper {
   display: flex;
   justify-content: space-between;
   padding: 0 0.5rem;
 }
-
-.item {
+header .item {
   display: flex;
 }
-
-.left {
+header .left {
   flex-wrap: wrap;
   display: flex;
   gap: 20px;
   align-items: center;
 }
-.left .location img {
+header .left .location img {
   width: 2vw;
 }
-
-.center {
+header .center {
   align-self: center;
 }
-.center h1 {
+header .center h1 {
   text-transform: uppercase;
   font-weight: light;
 }
-
-.right {
+header .right {
   display: flex;
   gap: 25px;
   align-items: center;
 }
-.right .icons {
+header .right .icons {
   display: flex;
   gap: 15px;
   cursor: pointer;
   color: #777;
 }
-.right .icons .cartIcon {
+header .right .icons .cartIcon {
   position: relative;
 }
-.right .icons .cartIcon span {
+header .right .icons .cartIcon span {
   background-color: #375cd7;
   border-radius: 70%;
   font-size: 12px;
@@ -261,6 +257,40 @@ section.slider .container div.slide .img {
   font-size: 14px;
   color: rgb(138, 134, 134);
   text-decoration: line-through;
+}
+
+.contact {
+  background-color: #2879fe;
+  color: #fff;
+  padding: 0.5rem;
+}
+.contact .wrapper {
+  display: flex;
+  align-items: center;
+}
+.contact .wrapper::before {
+  content: "";
+  width: 20px;
+}
+.contact .wrapper .mail {
+  margin-right: auto;
+  margin-left: 1rem;
+}
+.contact .wrapper .mail input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0;
+}
+.contact .wrapper .mail button {
+  padding: 10px;
+  color: #fff;
+  background-color: #333;
+  border-radius: 0 5px 5px 0;
+  border: none;
+}
+
+.products div {
+  display: block;
 }
 
 * {
