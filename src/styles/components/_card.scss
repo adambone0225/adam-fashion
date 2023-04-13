@@ -1,8 +1,19 @@
-.card {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.cards {
+  // display: flex;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  grid-column-gap: 16px;
+  grid-row-gap: 40px;
+  width: 100%;
+  padding-bottom: 40px;
+  .card {
+    // width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
   span {
     position: absolute;
     font-weight: bold;
@@ -49,6 +60,22 @@
         color: rgb(138, 134, 134);
         text-decoration: line-through;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 972px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(4.4rem, 1.5fr));
+    .image {
+    }
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .cards {
+    grid-template-columns: repeat(1, minmax(4.4rem, 1.5fr));
+    .image {
     }
   }
 }
