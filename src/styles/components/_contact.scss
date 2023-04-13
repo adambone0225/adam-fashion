@@ -1,0 +1,28 @@
+@use "../template" as a;
+
+.contact {
+  background-color: #2879fe;
+  color: #fff;
+  padding: 0.5rem;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    &::before {
+      content: "";
+      width: 20px;
+    }
+    .mail {
+      margin-right: auto;
+      margin-left: 1rem;
+      input {
+        padding: 10px;
+        border: none;
+        border-radius: 5px 0 0;
+      }
+      button {
+        @include a.black-submit-button;
+      }
+    }
+  }
+}
