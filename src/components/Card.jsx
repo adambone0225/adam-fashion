@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Card = (props) => {
-  console.log(props);
+  console.log(props.coverImg);
   return (
     <Link className="link" to={`/product/${props.id}`}>
       <div className="card">
@@ -11,15 +11,19 @@ const Card = (props) => {
           <img
             className="cover-img"
             src={
-              process.env.PUBLIC_URL +
-              `/image/featureProduct/${props.id}/${props.coverImg}`
+              props.coverImg.length > 100
+                ? props.coverImg
+                : process.env.PUBLIC_URL +
+                  `/image/featureProduct/${props.id}/${props.coverImg}`
             }
             alt=""
           />
           <img
             src={
-              process.env.PUBLIC_URL +
-              `/image/featureProduct/${props.id}/${props.secondImg}`
+              props.coverImg.length > 110
+                ? props.secondImg
+                : process.env.PUBLIC_URL +
+                  `/image/featureProduct/${props.id}/${props.secondImg}`
             }
             alt=""
             className="second-img"

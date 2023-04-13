@@ -142,12 +142,8 @@ section.slider .container div.slide .img {
 }
 
 .featured-product {
-  margin: 100px 50px;
+  margin: auto;
   width: 80vw;
-}
-.featured-product .cards {
-  display: flex;
-  gap: 50px;
 }
 
 :root {
@@ -206,13 +202,20 @@ section.slider .container div.slide .img {
      object-fit: cover;
 }
 
-.card {
-  width: 300px;
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  grid-column-gap: 16px;
+  grid-row-gap: 40px;
+  width: 100%;
+  padding-bottom: 40px;
+}
+.cards .card {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.card span {
+.cards span {
   position: absolute;
   font-weight: bold;
   top: 5px;
@@ -222,43 +225,53 @@ section.slider .container div.slide .img {
   padding: 0.3rem;
   z-index: 5;
 }
-.card .image {
+.cards .image {
   width: 100%;
   height: 400px;
   overflow: hidden;
   position: relative;
 }
-.card .image:hover .second-img {
+.cards .image:hover .second-img {
   z-index: 2;
 }
-.card .image img {
+.cards .image img {
   position: absolute;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.card .image .cover-img {
+.cards .image .cover-img {
   z-index: 1;
 }
-.card h2 {
+.cards h2 {
   height: 40px;
   font-size: 16px;
   font-weight: 400;
 }
-.card .prices {
+.cards .prices {
   display: flex;
   gap: 30px;
 }
-.card .prices h3 {
+.cards .prices h3 {
   font-size: 17px;
 }
-.card .prices h3:first-child {
+.cards .prices h3:first-child {
   font-size: 14px;
   color: rgb(138, 134, 134);
   text-decoration: line-through;
 }
 
+@media screen and (max-width: 972px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(4.4rem, 1.5fr));
+  }
+}
+@media screen and (max-width: 660px) {
+  .cards {
+    grid-template-columns: repeat(1, minmax(4.4rem, 1.5fr));
+  }
+}
 .contact {
   background-color: #2879fe;
   color: #fff;
@@ -289,8 +302,34 @@ section.slider .container div.slide .img {
   border: none;
 }
 
-.products div {
-  display: block;
+.products {
+  padding: 1rem;
+  display: flex;
+}
+.products .left {
+  flex: 1;
+  position: sticky;
+  top: 50px;
+  height: 100%;
+}
+.products .left .filter-item {
+  margin-bottom: 1rem;
+}
+.products .left .filter-item h3 {
+  margin-bottom: 20px;
+}
+.products .left .filter-item .input-item label {
+  margin-left: 5px;
+}
+.products .right {
+  flex: 3;
+}
+.products .right .catImg {
+  width: 100%;
+  height: 40dvh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 1rem;
 }
 
 * {

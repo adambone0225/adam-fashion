@@ -48,13 +48,6 @@ const Slider = () => {
           onClick={goToNext}
         />
         <div className="slide">
-          {/* /* {image.map((img, index) => (
-            <div
-              className="img"
-              key={index}
-              style={{ backgroundImage: `url(${img})` }}
-            ></div>
-          ))} */}
           <div
             className="img"
             style={{ backgroundImage: `url(${image[currentIndex]})` }}

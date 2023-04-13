@@ -1,0 +1,30 @@
+.products {
+  padding: 1rem;
+  display: flex;
+  .left {
+    flex: 1;
+    position: sticky;
+    top: 50px;
+    height: 100%;
+    .filter-item {
+      margin-bottom: 1rem;
+      h3 {
+        margin-bottom: 20px;
+      }
+      .input-item {
+        label {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+  .right {
+    flex: 3;
+    .catImg {
+      width: 100%;
+      height: 40dvh;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+  }
+}
