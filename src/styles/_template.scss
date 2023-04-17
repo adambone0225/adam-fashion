@@ -24,3 +24,16 @@
   border-radius: 0 5px 5px 0;
   border: none;
 }
+
+@mixin blue-button2($width) {
+  width: $width;
+  padding: 10px;
+  background-color: var(--neon-blue);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  gap: 20px;
+}
