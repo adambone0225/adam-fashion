@@ -39,6 +39,7 @@ const data2 = [
   {
     id: 1,
     title: "Hat 1",
+    description: "hat hat hat hat ",
     gender: "men",
     coverImg:
       "https://www.lardini.com/media/catalog/product/cache/327e6c09905161bb279125e81f627269/e/p/epcap01_ep60400_850-01.jpg",
@@ -52,6 +53,7 @@ const data2 = [
     id: 2,
     title: "Hat 2",
     gender: "men",
+    description: "hat hat hat hat ",
     coverImg:
       "https://media.paulsmith.com/dam/products/w_600,c_scale/q_80/STILL/W1A/W1A-483DT-K087-70/W1A-483DT-K087-70_10.jpg",
     secondImg:
@@ -64,6 +66,7 @@ const data2 = [
     id: 3,
     title: "shoe 1",
     gender: "men",
+    description: "hat hat hat hat ",
     coverImg: "https://www.srmax.com/images/products/srm168-profile.jpg",
     secondImg:
       "https://www.srmax.com/_cache/images/products/srm168-top-646x1500.jpg",

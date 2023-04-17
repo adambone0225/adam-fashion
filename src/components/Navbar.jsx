@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { Link } from "react-router-dom";
+import Cart from "./Cart";
 
 const Navbar = () => {
+  const [show, setShow] = useState(false);
   return (
     <header>
       <div className="wrapper">
@@ -45,13 +47,14 @@ const Navbar = () => {
           <div className="icons">
             <LoginOutlinedIcon />
             <FavoriteBorderOutlinedIcon />
-            <div className="cartIcon">
+            <div className="cartIcon" onClick={() => setShow(!show)}>
               <ShoppingCartOutlinedIcon />
               <span>0</span>
             </div>
           </div>
         </section>
       </div>
+      {show && <Cart />}
     </header>
   );
 };

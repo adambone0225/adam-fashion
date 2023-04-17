@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Card = (props) => {
-  console.log(props.coverImg);
   return (
     <Link className="link" to={`/product/${props.id}`}>
       <div className="card">

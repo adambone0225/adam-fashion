@@ -5,7 +5,9 @@
 @use "./components//categories";
 @use "./components/card";
 @use "./components/contact";
+@use "./components/cart";
 @use "./components/products";
+@use "./components/product";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&family=Roboto+Mono:wght@200;300;400;600;700&display=swap");
 
 * {
