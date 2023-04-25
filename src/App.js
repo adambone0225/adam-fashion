@@ -4,6 +4,7 @@ import Product from "./pages/Product";
 import Products from "./pages/Products";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+
 const Layout = () => {
   return (
     <div className="app">

@@ -1,25 +1,39 @@
 import React, { useState } from "react";
 import List from "../components/List";
 import { useParams } from "react-router-dom";
+import useFetch from "../hooks/useFetch";
 
 const Products = () => {
   const [maxPrice, setMaxPrice] = useState(1000);
-  const id = parseInt(useParams().id);
+  const catId = parseInt(useParams().id);
   const [sort, setSort] = useState(null);
+  const [selectedCat, setSelectCat] = useState([]);
+  const { data, error, loading } = useFetch(
+    `/sub-categories?[filters][categories][id][$eq]=${catId}`
+  ); // select items belong to the id of categories (men or women) being 1, which is men
+
+  const changeHandler = (e) => {
+    const value = e.target.value;
+    const isChecked = e.target.checked;
+
+    setSelectCat(
+      isChecked
+        ? [...selectedCat, value]
+        : selectedCat.filter((item) => item != value)
+    );
+  };
 
   return (
     <div className="products">
       <div className="left">
         <div className="filter-item">
           <h3>product categories</h3>
-          <div className="input-item">
-            <input type="checkbox" id="1" value={1} />
-            <label htmlFor="1">Shoes</label>
-          </div>
-          <div className="input-item">
-            <input type="checkbox" id="2" value={2} />
-            <label htmlFor="2">hat</label>
-          </div>
+          {data.map((item) => (
+            <div key={item.id} className="input-item" onChange={changeHandler}>
+              <input type="checkbox" id={item.id} value={item.id} />
+              <label htmlFor={item.id}>{item.attributes.title}</label>
+            </div>
+          ))}
         </div>
 
         <div className="filter-item">
@@ -35,6 +49,7 @@ const Products = () => {
                 setMaxPrice(e.target.value);
               }}
             />
+            <span>{maxPrice}</span>
           </div>
         </div>
 
@@ -73,7 +88,12 @@ const Products = () => {
           src="https://img.freepik.com/free-photo/rack-clothes-store_23-2148929537.jpg?w=1380&t=st=1681196912~exp=1681197512~hmac=a0dfba976438d3494e5cd72fadaba1beccdd02c497b9cbfbd776efc82aa0cb43"
           alt=""
         />
-        <List catId={id} maxPrice={maxPrice} sort={sort} />
+        <List
+          catId={catId}
+          maxPrice={maxPrice}
+          sort={sort}
+          filter={selectedCat}
+        />
       </section>
     </div>
   );

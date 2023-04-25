@@ -1,37 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Card = (props) => {
+const fakeOldPrice = 40;
+
+const Card = ({ item }) => {
   return (
-    <Link className="link" to={`/product/${props.id}`}>
+    <Link className="link" to={`/product/${item.id}`}>
       <div className="card">
         <div className="image">
-          {props.isNew && <span>Latest</span>}
+          {item.attributes.isNew && <span>Latest</span>}
           <img
             className="cover-img"
             src={
-              props.coverImg.length > 100
-                ? props.coverImg
-                : process.env.PUBLIC_URL +
-                  `/image/featureProduct/${props.id}/${props.coverImg}`
+              process.env.REACT_APP_UPLOAD_URL +
+              item.attributes.coverImg.data.attributes.url
             }
             alt=""
           />
           <img
             src={
-              props.coverImg.length > 110
-                ? props.secondImg
-                : process.env.PUBLIC_URL +
-                  `/image/featureProduct/${props.id}/${props.secondImg}`
+              process.env.REACT_APP_UPLOAD_URL +
+              item.attributes.secondImg.data.attributes.url
             }
             alt=""
             className="second-img"
           />
         </div>
-        <h2>{props.title}</h2>
+        <h2>{item.attributes.title}</h2>
         <div className="prices">
-          <h3>${props.price}</h3>
-          <h3>${props.oldPrice}</h3>
+          <h3>
+            ${item.attributes.oldprice || item.attributes.price + fakeOldPrice}
+          </h3>
+          <h3>${item.attributes.price}</h3>
         </div>
       </div>
     </Link>

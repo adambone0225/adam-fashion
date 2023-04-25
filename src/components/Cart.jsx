@@ -3,7 +3,6 @@ import { data2 } from "./data";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 const Cart = () => {
-  console.log(data2);
   return (
     <div className="cart">
       <h1>item in cart</h1>
