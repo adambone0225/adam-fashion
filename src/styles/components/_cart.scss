@@ -33,6 +33,10 @@
       .price {
         color: var(--neon-blue);
         font-weight: bold;
+        b {
+          font-weight: bolder;
+          font-size: 1.5rem;
+        }
       }
     }
   }

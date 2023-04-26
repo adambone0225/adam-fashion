@@ -1,28 +1,45 @@
 import React from "react";
-import { data2 } from "./data";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { removeItem, reset } from "../redux/cartReducer";
 
 const Cart = () => {
+  const products = useSelector((state) => state.cart.products);
+  const dispatch = useDispatch();
+
+  const total = () => {
+    let amount = 0;
+    products.forEach((item) => (amount += item.quantity * item.price));
+    return amount;
+  };
   return (
     <div className="cart">
       <h1>item in cart</h1>
-      {data2.map((item) => (
+      {products.map((item) => (
         <div className="cart-item" key={item.id}>
-          <img src={item.coverImg} alt="" />
+          <img src={process.env.REACT_APP_UPLOAD_URL + item.img} alt="" />
           <div className="details">
             <h1>{item.title}</h1>
             <p>{item.description?.substring(0, 100)}</p>
-            <div className="price"> 1 x ${item.price}</div>
+            <div className="price">
+              <b>{item.quantity}</b> x ${item.price}
+            </div>
           </div>
-          <DeleteForeverIcon className="delete" />
+          <DeleteForeverIcon
+            className="delete"
+            onClick={() => dispatch(removeItem(item.id))}
+          />
         </div>
       ))}
       <div className="total">
         <span>SUBTOTOAL</span>
-        <span>$123</span>
+        <span>${total()}</span>
       </div>
       <button>PROCEDD TO CHECKOUT</button>
-      <span className="reset">Reset Cart</span>
+      <span className="reset" onClick={() => dispatch(reset())}>
+        Reset Cart
+      </span>
     </div>
   );
 };

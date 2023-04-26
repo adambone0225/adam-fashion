@@ -338,6 +338,10 @@ section.slider .container div.slide .img {
   color: var(--neon-blue);
   font-weight: bold;
 }
+.cart .cart-item .details .price b {
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
 .cart .delete {
   color: red;
   cursor: pointer;

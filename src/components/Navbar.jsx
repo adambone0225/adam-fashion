@@ -5,10 +5,13 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Cart from "./Cart";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
+  const products = useSelector((state) => state.cart.products);
+
   return (
     <header>
       <div className="wrapper">
@@ -49,7 +52,7 @@ const Navbar = () => {
             <FavoriteBorderOutlinedIcon />
             <div className="cartIcon" onClick={() => setShow(!show)}>
               <ShoppingCartOutlinedIcon />
-              <span>0</span>
+              <span>{products.length}</span>
             </div>
           </div>
         </section>
