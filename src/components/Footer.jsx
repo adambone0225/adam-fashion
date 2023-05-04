@@ -2,10 +2,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer id="footer">
       <section className="top">
         <h1>Adam's Fashion</h1>
-
         <p>
           Adam's Fashion was founded in 1975 by Adam Johnson, a young
           entrepreneur with a passion for fashion. Adam had always been

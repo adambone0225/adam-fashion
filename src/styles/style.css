@@ -3,6 +3,7 @@ header {
   position: relative;
 }
 header div.wrapper {
+  height: 10dvw;
   display: flex;
   justify-content: space-between;
   padding: 0 0.5rem;
@@ -229,8 +230,7 @@ section.slider .container div.slide .img {
   z-index: 5;
 }
 .cards .image {
-  width: 100%;
-  height: 400px;
+  aspect-ratio: 1/1.44;
   overflow: hidden;
   position: relative;
 }
@@ -240,7 +240,7 @@ section.slider .container div.slide .img {
 .cards .image img {
   position: absolute;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -310,7 +310,7 @@ section.slider .container div.slide .img {
   right: 20px;
   top: 100%;
   z-index: 100;
-  background-color: #fff;
+  background-color: hsl(0, 0%, 100%);
   padding: 20px;
 }
 .cart .cart-item {
@@ -495,6 +495,52 @@ section.slider .container div.slide .img {
   margin-top: 0.5rem;
 }
 
+nav.product-info-nav {
+  display: flex;
+  gap: 1rem;
+}
+nav.product-info-nav a {
+  text-decoration: none;
+  color: #4d4d4d;
+  font-weight: bolder;
+  padding: 5px 0px;
+  font-size: 1.25rem;
+}
+
+.product-info-nav-info h4 {
+  padding-bottom: 1rem;
+}
+
+.product .right .product-info-nav-delivery {
+  border: 2px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+}
+.product .right .product-info-nav-delivery div {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #e5e7eb;
+}
+.product .right .product-info-nav-delivery div:last-of-type {
+  border: none;
+}
+.product .right .product-info-nav-delivery div a {
+  text-decoration: underline;
+  color: var(--neon-blue);
+  font-weight: bold;
+}
+.product .right .product-info-nav-delivery div p {
+  color: #747577;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.product .right .product-info-nav-delivery div p b {
+  color: auto;
+}
+
 * {
   font-family: "Roboto Mono", monospace;
   box-sizing: border-box;
@@ -502,4 +548,5 @@ section.slider .container div.slide .img {
   text-decoration: none;
   text-transform: capitalize;
   color: inherit;
+  scroll-behavior: smooth;
 }/*# sourceMappingURL=style.css.map */

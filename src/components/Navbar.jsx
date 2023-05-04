@@ -30,13 +30,13 @@ const Navbar = () => {
           <div className="item">
             <Link to="/products/1"> men</Link>
           </div>
-          <div className="item">
-            <Link to="/products/1"> kids</Link>
-          </div>
+
           <SearchOutlinedIcon />
         </section>
         <section className="center">
-          <h1>Adam's Fashion</h1>
+          <Link to="">
+            <h1>Adam's Fashion</h1>
+          </Link>
         </section>
         <section className="right">
           <Link className="navBar-right" to="">
@@ -45,8 +45,7 @@ const Navbar = () => {
           <Link className="navBar-right" to="">
             About
           </Link>
-          <Link className="navBar-right">Contact</Link>
-          <Link className="navBar-right">Stores</Link>
+          <a href="#footer">Contact</a>
           <div className="icons">
             <LoginOutlinedIcon />
             <FavoriteBorderOutlinedIcon />

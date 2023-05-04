@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
-
+import { useParams, NavLink, Outlet } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import BalanceOutlinedIcon from "@mui/icons-material/BalanceOutlined";
-import useFetch from "../hooks/useFetch";
+import useFetch from "../../hooks/useFetch";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../redux/cartReducer";
+import { addToCart } from "../../redux/cartReducer";
 
 const Product = () => {
   const [image, setImage] = useState("coverImg");
@@ -15,10 +14,16 @@ const Product = () => {
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
   const dispatch = useDispatch();
 
+  const activeStyles = {
+    fontWeight: "bold",
+    textDecoration: "underline",
+    color: "#161616",
+  };
+
   return (
     <div className="product">
       {loading ? (
-        console.log(loading)
+        "loading"
       ) : (
         <>
           <section className="left">
@@ -54,7 +59,7 @@ const Product = () => {
           <section className="right">
             <h2>{data.attributes?.title}</h2>
             <span className="price">{`$${data.attributes?.price}`}</span>
-            <p>{data.attributes?.description}</p>
+
             <div className="quantity">
               <button
                 onClick={() => setQuantity((cur) => (cur === 1 ? 1 : cur - 1))}
@@ -89,7 +94,23 @@ const Product = () => {
                 <BalanceOutlinedIcon /> COMPARE
               </button>
             </div>
-            <div className="info">
+            <nav className="product-info-nav">
+              <NavLink
+                to="."
+                end
+                style={({ isActive }) => (isActive ? activeStyles : null)}
+              >
+                Information
+              </NavLink>
+              <NavLink
+                to="delivery"
+                style={({ isActive }) => (isActive ? activeStyles : null)}
+              >
+                Delivery
+              </NavLink>
+            </nav>
+            <Outlet context={{ data }} />
+            {/* <div className="info">
               <span>Producer: </span>
               <span>Category</span>
             </div>
@@ -98,7 +119,7 @@ const Product = () => {
               <span>DESCRIPTION</span>
               <hr />
               <span>FAQ</span>
-            </div>
+            </div> */}
           </section>
         </>
       )}
