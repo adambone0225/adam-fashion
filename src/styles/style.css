@@ -203,7 +203,7 @@ section.slider .container div.slide .img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .cards {
@@ -242,7 +242,7 @@ section.slider .container div.slide .img {
   width: 100%;
   min-height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .cards .image .cover-img {
   z-index: 1;
@@ -323,7 +323,7 @@ section.slider .container div.slide .img {
   width: 80px;
   height: 100px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .cart .cart-item .details h1 {
   font-size: 1rem;
@@ -396,7 +396,7 @@ section.slider .container div.slide .img {
   width: 100%;
   height: 40dvh;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-bottom: 1rem;
 }
 
@@ -417,7 +417,7 @@ section.slider .container div.slide .img {
   width: 100%;
   height: 150px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-bottom: 1rem;
   cursor: pointer;
 }
@@ -428,7 +428,7 @@ section.slider .container div.slide .img {
   width: 100%;
   height: 70dvh;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .product .right {
   flex: 1;
@@ -549,4 +549,4 @@ nav.product-info-nav a {
   text-transform: capitalize;
   color: inherit;
   scroll-behavior: smooth;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
