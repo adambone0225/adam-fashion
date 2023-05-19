@@ -3,6 +3,7 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { removeItem, reset } from "../redux/cartReducer";
+import { makeRequest } from "../FetchRequest";
 
 const Cart = () => {
   const products = useSelector((state) => state.cart.products);
@@ -11,7 +12,24 @@ const Cart = () => {
   const total = () => {
     let amount = 0;
     products.forEach((item) => (amount += item.quantity * item.price));
-    return amount;
+    return amount.toFixed(2);
+  };
+
+  const checkoutHandler = async () => {
+    try {
+      let result = await makeRequest.post(
+        "/orders",
+        { products },
+        {
+          validateStatus: function (status) {
+            return status >= 200 && status <= 302;
+          },
+        }
+      );
+      console.log(result);
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <div className="cart">
@@ -36,7 +54,7 @@ const Cart = () => {
         <span>SUBTOTOAL</span>
         <span>${total()}</span>
       </div>
-      <button>PROCEDD TO CHECKOUT</button>
+      <button onClick={checkoutHandler}>PROCEDD TO CHECKOUT</button>
       <span className="reset" onClick={() => dispatch(reset())}>
         Reset Cart
       </span>

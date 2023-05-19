@@ -10,11 +10,7 @@ const useFetch = (url) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const result = await makeRequest.get(url, {
-          headers: {
-            Authorization: "bearer " + process.env.REACT_APP_API_TOKEN,
-          },
-        });
+        const result = await makeRequest.get(url);
 
         setData(result.data.data);
       } catch (err) {
