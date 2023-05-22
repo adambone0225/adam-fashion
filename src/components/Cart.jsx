@@ -22,11 +22,11 @@ const Cart = () => {
         { products },
         {
           validateStatus: function (status) {
-            return status >= 200 && status <= 302;
+            return status >= 200 && status <= 404;
           },
         }
       );
-      console.log(result);
+      window.location.href = result.data.url;
     } catch (err) {
       console.log(err);
     }
