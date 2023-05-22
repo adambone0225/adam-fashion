@@ -38,12 +38,11 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
 
       await strapi.service("api::order.order").create({
         data: {
-          products,
-          stripeID: session.id,
+          details: products,
+          stripeid: session.id,
         },
       });
-      console.log(ctx.request);
-      console.log(ctx.response);
+
       ctx.response.status = 302;
       ctx.body = { url: session.url };
     } catch (err) {
