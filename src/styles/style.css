@@ -305,6 +305,33 @@ section.slider .container div.slide .img {
   border: none;
 }
 
+section.message {
+  min-height: 40dvw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.message .message-box {
+  border: 1px solid #d0d7de;
+  max-width: 830px;
+  padding: 1rem;
+}
+section.message .message-box .logo {
+  display: flex;
+  margin-bottom: 24px;
+  justify-content: center;
+}
+section.message .message-box .logo svg {
+  height: 64px;
+  width: 64px;
+}
+section.message .message-box .logo .success {
+  color: rgb(14, 147, 14);
+}
+section.message .message-box .logo .error {
+  color: rgb(218, 14, 14);
+}
+
 .cart {
   position: absolute;
   right: 20px;
