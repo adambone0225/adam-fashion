@@ -10,8 +10,9 @@ import Cart from "./Cart";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
-  const products = useSelector((state) => state.cart.products);
-
+  const products = useSelector((state) => state.root.cart.products);
+  const login = useSelector((state) => state.root.user);
+  console.log(products);
   return (
     <header>
       <div className="wrapper">
@@ -30,7 +31,6 @@ const Navbar = () => {
           <div className="item">
             <Link to="/products/1"> men</Link>
           </div>
-
           <SearchOutlinedIcon />
         </section>
         <section className="center">
