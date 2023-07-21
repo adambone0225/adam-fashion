@@ -13,7 +13,7 @@ const Product = () => {
   const id = useParams().id;
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
   const dispatch = useDispatch();
-
+  console.log(data);
   const activeStyles = {
     fontWeight: "bold",
     textDecoration: "underline",

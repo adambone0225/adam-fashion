@@ -1,44 +1,45 @@
 import React, { useState } from "react";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { removeToken } from "../auth/helper";
+import { useSelector, useDispatch } from "react-redux";
+import { message } from "antd";
+import { logOut } from "../redux/userReducer";
 import Cart from "./Cart";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const [menuShow, setMenuShow] = useState(false);
   const [show, setShow] = useState(false);
   const products = useSelector((state) => state.root.cart.products);
   const login = useSelector((state) => state.root.user);
-  console.log(products);
+
+  const handleLogout = () => {
+    removeToken();
+    dispatch(logOut());
+
+    return message.success(`You have logged out`);
+  };
+
   return (
-    <header>
-      <div className="wrapper">
+    <>
+      <header className="wrapper">
+        <MenuIcon
+          className="menu-icon"
+          onClick={() => setMenuShow(!menuShow)}
+        />
         <section className="left">
-          <div className="location">
-            <img src="/image/pin.png" alt="" />
-            <KeyboardArrowDownIcon />
-          </div>
-          <div className="item">
-            <span>USD</span>
-            <KeyboardArrowDownIcon />
-          </div>
-          <div className="item">
-            <Link to="/products/2"> women</Link>
-          </div>
-          <div className="item">
-            <Link to="/products/1"> men</Link>
-          </div>
-          <SearchOutlinedIcon />
-        </section>
-        <section className="center">
-          <Link to="">
+          <Link to="/">
             <h1>Adam's Fashion</h1>
           </Link>
         </section>
-        <section className="right">
+        <section className={menuShow ? "center active" : "center"}>
+          <Link to="/products/2"> women</Link>
+          <Link to="/products/1"> men</Link>
           <Link className="navBar-right" to="">
             Homepage
           </Link>
@@ -46,8 +47,23 @@ const Navbar = () => {
             About
           </Link>
           <a href="#footer">Contact</a>
+        </section>
+        <section className="right">
           <div className="icons">
-            <LoginOutlinedIcon />
+            {login.userInfo ? (
+              <>
+                <Link to="/profile">
+                  <AccountBoxIcon />
+                </Link>
+                <LoginOutlinedIcon onClick={handleLogout} />
+              </>
+            ) : (
+              <Link to="/auth">
+                <div title="log in">
+                  <LoginOutlinedIcon />
+                </div>
+              </Link>
+            )}
             <FavoriteBorderOutlinedIcon />
             <div className="cartIcon" onClick={() => setShow(!show)}>
               <ShoppingCartOutlinedIcon />
@@ -55,9 +71,9 @@ const Navbar = () => {
             </div>
           </div>
         </section>
-      </div>
-      {show && <Cart />}
-    </header>
+        {show && <Cart />}
+      </header>
+    </>
   );
 };
 

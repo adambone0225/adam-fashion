@@ -29,7 +29,7 @@ const Slider = () => {
     if (timeRef.current) {
       clearTimeout(timeRef.current);
     }
-    console.log("testing");
+
     timeRef.current = setTimeout(() => {
       goToNext();
       return clearTimeout(timeRef.current);

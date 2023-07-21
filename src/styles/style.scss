@@ -4,9 +4,11 @@
 @use "./components/featuredProduct";
 @use "./components//categories";
 @use "./components/card";
+@use "./pages/login";
 @use "./components/contact";
 @use "./components/message";
 @use "./components/cart";
+@use "./components/userInfo";
 @use "./pages/products";
 @use "./pages/product";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&family=Roboto+Mono:wght@200;300;400;600;700&display=swap");
@@ -19,4 +21,16 @@
   text-transform: capitalize;
   color: inherit;
   scroll-behavior: smooth;
+  transition: all 0.2s linear;
+}
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+li,
+ul {
+  list-style-type: none;
+  display: block;
 }

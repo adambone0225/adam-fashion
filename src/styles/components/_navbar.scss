@@ -1,13 +1,20 @@
-header {
-  position: relative;
-  div.wrapper {
-    height: 10dvw;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 0.5rem;
-  }
-  .item {
-    display: flex;
+header.wrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #f0e7e7;
+  box-shadow: rgba(120, 115, 115, 0.1) 0px 4px 12px;
+  display: flex;
+  justify-content: space-between;
+  .menu-icon {
+    display: none;
+    color: #fff;
+    border: 0.2rem solid;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 3rem;
   }
   .left {
     flex-wrap: wrap;
@@ -22,16 +29,23 @@ header {
     }
   }
   .center {
-    align-self: center;
-    h1 {
-      text-transform: uppercase;
-      font-weight: light;
+    // align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    a {
+      font-size: 1.5rem;
+      margin: 0 1rem;
+      &:hover {
+        color: var(--electric-blue);
+        border-bottom: 1px solid var(--electric-blue);
+      }
     }
   }
   .right {
     display: flex;
     gap: 25px;
     align-items: center;
+    flex-wrap: wrap;
     .icons {
       display: flex;
       gap: 15px;
@@ -56,17 +70,34 @@ header {
       }
     }
   }
+  padding: 2rem 9%;
 }
 
-// @media screen and (max-width: 700px) {
-//   header {
-//     .wrapper {
-//       position: relative;
-//       .right {
-//         position: absolute;
-//         top: 100%;
-//         left: 0;
-//       }
-//     }
-//   }
-// }
+@media screen and (max-width: 768px) {
+  header.wrapper {
+    svg.menu-icon {
+      display: initial;
+    }
+    .center {
+      position: absolute;
+      width: 100%;
+      top: 100%;
+      right: 0;
+      background-color: #121111;
+      border-top: 0.1rem solid #ffffff33;
+      padding: 1rem 2rem;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      flex-direction: column;
+      a {
+        text-align: center;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        background-color: #fff;
+      }
+    }
+    .active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+}

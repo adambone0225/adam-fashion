@@ -7,7 +7,6 @@ const FeaturedProduct = ({ type }) => {
     `/products?populate=*&[filters][type][$eq]=${type}`
   );
 
-  console.log(data);
   return (
     <section className="featured-product">
       <h1>{type} Products</h1>

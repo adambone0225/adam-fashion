@@ -8,7 +8,7 @@ const Products = () => {
   const catId = parseInt(useParams().id);
   const [sort, setSort] = useState(null);
   const [selectedCat, setSelectCat] = useState([]);
-  const { data, error, loading } = useFetch(
+  const { data } = useFetch(
     `/sub-categories?[filters][categories][id][$eq]=${catId}`
   ); // select items belong to the id of categories (men or women) being 1, which is men
 
@@ -57,6 +57,7 @@ const Products = () => {
           <h3>sort by </h3>
           <div className="input-item">
             <input
+              checked
               type="radio"
               id="asc"
               value="asc"

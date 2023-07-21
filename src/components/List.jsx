@@ -3,7 +3,7 @@ import useFetch from "../hooks/useFetch";
 import Card from "./Card";
 
 const List = ({ maxPrice, catId, sort, filter }) => {
-  const { data, error, loading } = useFetch(
+  const { data } = useFetch(
     `/products?populate=*&filters[categories][id][$eq]=${catId}${filter.map(
       (item) => `&filters[sub_categories][id][$eq]=${item}`
     )}${sort && `&filters[price][$lte]=${maxPrice}&sort=price:${sort}`}`

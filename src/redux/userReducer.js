@@ -1,34 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  user: undefined,
-  isLoading: false,
-  setUser: () => {},
+  userInfo: "",
+  isLoading: true,
 };
 
 export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    addToCart: (state, action) => {
-      let item = state.products.find((item) => item.id === action.payload.id);
-      if (item) {
-        item.quantity += action.payload.quantity;
-      } else {
-        state.products.push(action.payload);
-      }
+    setUser: (state, action) => {
+      state.userInfo = action.payload;
     },
-    removeItem: (state, action) => {
-      state.products = state.products.filter(
-        (item) => item.id != action.payload
-      );
-    },
-    reset: (state) => {
-      state.products = [];
+    logOut: (state, action) => {
+      state.userInfo = "";
     },
   },
 });
 
-export const { addToCart, removeItem, reset } = userSlice.actions;
+export const { setUser, logOut } = userSlice.actions;
 
 export default userSlice.reducer;
