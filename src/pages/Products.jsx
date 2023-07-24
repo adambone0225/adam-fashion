@@ -6,7 +6,7 @@ import useFetch from "../hooks/useFetch";
 const Products = () => {
   const [maxPrice, setMaxPrice] = useState(1000);
   const catId = parseInt(useParams().id);
-  const [sort, setSort] = useState(null);
+  const [sort, setSort] = useState("asc");
   const [selectedCat, setSelectCat] = useState([]);
   const { data } = useFetch(
     `/sub-categories?[filters][categories][id][$eq]=${catId}`
@@ -19,7 +19,7 @@ const Products = () => {
     setSelectCat(
       isChecked
         ? [...selectedCat, value]
-        : selectedCat.filter((item) => item != value)
+        : selectedCat.filter((item) => item !== value)
     );
   };
 
@@ -45,7 +45,7 @@ const Products = () => {
               min={0}
               max={400}
               step={10}
-              onChange={(e) => {
+              onClick={(e) => {
                 setMaxPrice(e.target.value);
               }}
             />
@@ -57,12 +57,11 @@ const Products = () => {
           <h3>sort by </h3>
           <div className="input-item">
             <input
-              checked
               type="radio"
               id="asc"
               value="asc"
               name="price"
-              onChange={(e) => {
+              onClick={(e) => {
                 setSort("asc");
               }}
             />
