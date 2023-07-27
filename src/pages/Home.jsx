@@ -11,7 +11,6 @@ const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [message, setMessage] = useState();
-  const param = window.location.search;
   const query = new URLSearchParams(window.location.search);
 
   useEffect(() => {

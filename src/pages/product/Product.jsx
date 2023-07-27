@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams, NavLink, Outlet } from "react-router-dom";
+import { useParams, NavLink, Outlet, Link } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import BalanceOutlinedIcon from "@mui/icons-material/BalanceOutlined";
@@ -112,16 +112,6 @@ const Product = () => {
               </NavLink>
             </nav>
             <Outlet context={{ data }} />
-            {/* <div className="info">
-              <span>Producer: </span>
-              <span>Category</span>
-            </div>
-            <br />
-            <div className="info">
-              <span>DESCRIPTION</span>
-              <hr />
-              <span>FAQ</span>
-            </div> */}
           </section>
         </>
       )}
