@@ -6,7 +6,7 @@ import OrderItem from "./OrderItem";
 const UserInfo = () => {
   const userInfo = useSelector((state) => state.root.user.userInfo);
   const { data } = useFetch(
-    `/users?filters[username][$eq]=${userInfo.username}`,
+    `/users?populate=*&filters[username][$eq]=${userInfo.username}`,
     `/orders?filters[email][$eq]=${userInfo.email}`
   );
   data?.shift();

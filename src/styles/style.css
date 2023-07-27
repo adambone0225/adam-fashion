@@ -645,7 +645,6 @@ section.message .message-box .logo .error {
 }
 .product .left .gallery img {
   width: 100%;
-  height: 150px;
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 1rem;
@@ -656,7 +655,6 @@ section.message .message-box .logo .error {
 }
 .product .left .display-image img {
   width: 100%;
-  height: 70dvh;
   -o-object-fit: cover;
      object-fit: cover;
 }

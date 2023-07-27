@@ -1,7 +1,6 @@
 import React from "react";
 
 const OrderItem = ({ order }) => {
-  console.log(order);
   return (
     <>
       <li className="orders_order">
@@ -21,7 +20,7 @@ const OrderItem = ({ order }) => {
                 <img
                   width="75"
                   height="108"
-                  src={process.env.REACT_APP_UPLOAD_URL + item.img}
+                  src={process.env.REACT_APP_UPLOAD_URL + item.img.substring(8)}
                   alt="item photo"
                 />
                 <div className="orders_item-meta">

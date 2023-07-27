@@ -13,14 +13,14 @@ const Card = ({ item }) => {
             className="cover-img"
             src={
               process.env.REACT_APP_UPLOAD_URL +
-              item.attributes.coverImg.data.attributes.url
+              item.attributes.coverImg.data.attributes.url.substring(8)
             }
             alt=""
           />
           <img
             src={
               process.env.REACT_APP_UPLOAD_URL +
-              item.attributes.secondImg.data.attributes.url
+              item.attributes.secondImg.data.attributes.url.substring(8)
             }
             alt=""
             className="second-img"

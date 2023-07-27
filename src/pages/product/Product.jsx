@@ -31,7 +31,7 @@ const Product = () => {
               <img
                 src={
                   process.env.REACT_APP_UPLOAD_URL +
-                  data?.attributes?.coverImg?.data?.attributes?.url
+                  data?.attributes?.coverImg?.data?.attributes?.url.substring(8)
                 }
                 alt=""
                 onClick={() => setImage("coverImg")}
@@ -39,7 +39,9 @@ const Product = () => {
               <img
                 src={
                   process.env.REACT_APP_UPLOAD_URL +
-                  data?.attributes?.secondImg?.data?.attributes?.url
+                  data?.attributes?.secondImg?.data?.attributes?.url.substring(
+                    8
+                  )
                 }
                 alt=""
                 onClick={() => setImage("secondImg")}
@@ -49,7 +51,7 @@ const Product = () => {
               <img
                 src={
                   process.env.REACT_APP_UPLOAD_URL +
-                  data?.attributes?.[image]?.data?.attributes?.url
+                  data?.attributes?.[image]?.data?.attributes?.url.substring(8)
                 }
                 alt=""
               />
