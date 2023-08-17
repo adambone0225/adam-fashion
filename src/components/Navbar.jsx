@@ -38,8 +38,8 @@ const Navbar = () => {
           </Link>
         </section>
         <section className={menuShow ? "center active" : "center"}>
-          <Link to="/products/2"> women</Link>
-          <Link to="/products/1"> men</Link>
+          <Link to="/products/women"> women</Link>
+          <Link to="/products/men"> men</Link>
           <Link className="navBar-right" to="">
             Homepage
           </Link>

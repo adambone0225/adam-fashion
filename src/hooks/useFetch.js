@@ -11,6 +11,7 @@ const useFetch = (url, url2) => {
       try {
         setLoading(true);
         const result = await makeRequest.get(url);
+        console.log(result);
         if (url2) {
           const result2 = await makeRequest.get(url2);
           let final = result.data.concat(result2.data.data);

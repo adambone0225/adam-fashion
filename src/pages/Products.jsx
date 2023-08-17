@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import List from "../components/List";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 
 const Products = () => {
+  const location = useLocation();
+  const param = location.pathname.substring(10);
   const [maxPrice, setMaxPrice] = useState(1000);
-  const catId = parseInt(useParams().id);
   const [sort, setSort] = useState("asc");
   const [selectedCat, setSelectCat] = useState([]);
   const { data } = useFetch(
-    `/sub-categories?[filters][categories][id][$eq]=${catId}`
-  ); // select items belong to the id of categories (men or women) being 1, which is men
-
+    `/sub-categories?[filters][categories][title][$eq]=${param}`
+  );
+  console.log(data);
   const changeHandler = (e) => {
     const value = e.target.value;
     const isChecked = e.target.checked;
@@ -89,7 +90,7 @@ const Products = () => {
           alt=""
         />
         <List
-          catId={catId}
+          param={param}
           maxPrice={maxPrice}
           sort={sort}
           filter={selectedCat}
