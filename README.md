@@ -1,12 +1,15 @@
-# adam-fashion
+# Adam's Fashion
 
 # Description
-Adam Fashion website is an **ecommence** website full-stack project. It applies **React** for building user interfaces. For Backend, **Strapi**, a headless CMS, is used to create **API**, support **authentication** and handle payment request via **Stripe**. Data is stored in **mySQL**, supplemented by **Amazon S3** for image hosting. 
+Adam's Fashion website is an **ecommence** website full-stack project. It applies **React** for building user interfaces. For Backend, **Strapi**, a headless CMS, is used to create **API**, support **authentication** and handle payment request to connect  **Stripe**. Data is stored in **mySQL**, supplemented by **Amazon S3** for image hosting. 
 
 ### Source code: 
-**Frontend**: go to [frontend](https://github.com/adambone0225/adam-fashion/tree/front-end) :point_left:
-**Backend** : go to [backend](https://github.com/adambone0225/adam-fashion/tree/back-end) :point_left:
- 
+ [Frontend](https://github.com/adambone0225/adam-fashion/tree/front-end) :point_left:
+ [Backend](https://github.com/adambone0225/adam-fashion/tree/back-end) :point_left:
+### Deployed website
+[Adam's fashion](https://adamfashion.netlify.app/) :point_left: <br/>
+*you can try viewing personal info page and use cart and checkout functions with the account (username: test, password:1234567) or one you register yourself. <br/>
+*If you wish to try the checkout function, you can fake personal information on the checkout page and use 4242 4242 4242 4242 as the credit card number.  
 
 
 # Features
