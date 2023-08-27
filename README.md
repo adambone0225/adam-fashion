@@ -14,6 +14,7 @@ Adam's Fashion website is an **ecommence** website full-stack project. It applie
 
 # Features
 - **Responsive** pages
+- **Redux Toolkit** to handle state change in cart and store user information.
 - **JWT**-based authentication and authorization, provided by Strapi
 - Shop item list built with **CSS grid**, which can be filtered and sorted.
 - User Info page and shopping cart protected by JWT
