@@ -98,8 +98,17 @@ header.wrapper .right .icons .cartIcon span {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
+@media screen and (max-width: 505px) {
+  header.wrapper .left {
+    margin-left: 0.25rem;
+  }
+  header.wrapper .menu-icon {
+    margin-right: 1rem;
+    margin-left: -20px;
+  }
+}
 footer {
-  margin: 3rem 4rem;
+  padding: 1rem;
 }
 footer .top h1 {
   font-size: 3rem;
@@ -119,6 +128,7 @@ footer .item {
 }
 footer .middle {
   margin-top: 1rem;
+  flex-wrap: wrap;
   display: flex;
   gap: 50px;
 }
@@ -187,6 +197,18 @@ section.slider .container div.slide .img {
   transform: scale(1.5);
 }
 
+@media screen and (max-width: 784px) {
+  section.slider {
+    height: auto;
+  }
+  section.slider .container {
+    width: auto;
+    aspect-ratio: 0.7;
+  }
+  section.slider .container .panel {
+    top: 10rem;
+  }
+}
 .featured-product {
   margin: auto;
   width: 80vw;
@@ -521,7 +543,7 @@ section.message .message-box .logo .error {
   gap: 20px;
 }
 .cart .reset {
-  font-size: 0.25rem;
+  font-size: 0.75rem;
   color: red;
   cursor: pointer;
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { setToken } from "../../auth/helper";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/userReducer";
 import axios from "axios";
 import { message, Alert, Spin } from "antd";
@@ -58,13 +58,13 @@ const Register = () => {
           type="username"
           className="box"
           name="username"
-          placeholder="username"
+          placeholder="username (at least 3 characters)"
         />
         <input
           type="password"
           className="box"
           name="password"
-          placeholder="password"
+          placeholder="password (at least 7 characters)"
         />
         {error ? (
           <Alert

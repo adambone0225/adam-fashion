@@ -101,3 +101,14 @@ header.wrapper {
     }
   }
 }
+@media screen and (max-width: 505px) {
+  header.wrapper {
+    .left {
+      margin-left: 0.25rem;
+    }
+    .menu-icon {
+      margin-right: 1rem;
+      margin-left: -20px;
+    }
+  }
+}

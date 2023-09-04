@@ -1,6 +1,5 @@
 section.slider {
   height: calc(100vh - 80px);
-
   .container {
     position: relative;
     justify-content: center;
@@ -61,4 +60,17 @@ section.slider {
 
 .slider-dots.active {
   transform: scale(1.5);
+}
+
+@media screen and (max-width: 784px) {
+  section.slider {
+    height: auto;
+    .container {
+      width: auto;
+      aspect-ratio: 0.7;
+      .panel {
+        top: 10rem;
+      }
+    }
+  }
 }

@@ -1,5 +1,5 @@
 footer {
-  margin: 3rem 4rem;
+  padding: 1rem;
   .top {
     h1 {
       font-size: 3rem;
@@ -20,6 +20,7 @@ footer {
   }
   .middle {
     margin-top: 1rem;
+    flex-wrap: wrap;
     display: flex;
     gap: 50px;
   }

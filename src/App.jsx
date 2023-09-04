@@ -1,15 +1,9 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet,
-  Navigate,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Home from "./pages/Home";
 import Product from "./pages/product/Product";
 import Products from "./pages/Products";
 import Register from "./pages/auth/Register";
 import Login from "./pages/auth/Login";
-import { getToken } from "./auth/helper";
 import UserInfo from "./components/UserInfo";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -48,7 +42,7 @@ const router = createBrowserRouter([
       { path: "register", element: <Register /> },
       {
         path: "profile",
-        element: getToken() ? <UserInfo /> : <Navigate to="/auth" />,
+        element: <UserInfo />,
       },
     ],
   },
