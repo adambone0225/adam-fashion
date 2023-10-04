@@ -711,7 +711,7 @@ section.message .message-box .logo .error {
   border: none;
 }
 .product .right .add {
-  width: 30%;
+  width: 60%;
   padding: 10px;
   background-color: var(--neon-blue);
   color: #fff;
@@ -791,6 +791,18 @@ nav.product-info-nav a {
   color: auto;
 }
 
+@media screen and (max-width: 500px) {
+  .product {
+    flex-direction: column;
+  }
+  .product .right {
+    align-items: center;
+  }
+  .product .right .functions {
+    width: 100%;
+    justify-content: center;
+  }
+}
 * {
   font-family: "Roboto Mono", monospace;
   box-sizing: border-box;

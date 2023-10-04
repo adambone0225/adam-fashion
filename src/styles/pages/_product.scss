@@ -58,7 +58,7 @@
     }
 
     .add {
-      @include a.blue-button2(30%);
+      @include a.blue-button2(60%);
     }
 
     .functions {
@@ -141,3 +141,15 @@ nav.product-info-nav {
   }
 }
 //
+@media screen and (max-width: 500px) {
+  .product {
+    flex-direction: column;
+    .right {
+      align-items: center;
+      .functions {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
