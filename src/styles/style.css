@@ -769,6 +769,18 @@ nav.product-info-nav a {
   color: auto;
 }
 
+@media screen and (max-width: 500px) {
+  .product {
+    flex-direction: column;
+  }
+  .product .right {
+    align-items: center;
+  }
+  .product .right .functions {
+    width: 100%;
+    justify-content: center;
+  }
+}
 * {
   font-family: "Roboto Mono", monospace;
   box-sizing: border-box;

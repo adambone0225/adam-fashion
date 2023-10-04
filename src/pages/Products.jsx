@@ -48,6 +48,9 @@ const Products = () => {
               onClick={(e) => {
                 setMaxPrice(e.target.value);
               }}
+              onTouchEnd={(e) => {
+                setMaxPrice(e.target.value);
+              }}
             />
             <span>{maxPrice}</span>
           </div>
