@@ -37,7 +37,12 @@ const Navbar = () => {
             <h1>Adam's Fashion</h1>
           </Link>
         </section>
-        <section className={menuShow ? "center active" : "center"}>
+        <section
+          className={menuShow ? "center active" : "center"}
+          onClick={() => {
+            setMenuShow(false);
+          }}
+        >
           <Link to="/products/women"> women</Link>
           <Link to="/products/men"> men</Link>
           <Link className="navBar-right" to="">
