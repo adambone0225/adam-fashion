@@ -43,7 +43,7 @@ const Home = () => {
       }, 2000);
       return () => clearTimeout(id);
     }
-  }, [navigate]);
+  }, [navigate, dispatch, query]);
 
   return message ? (
     <Message message={message} />

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams, NavLink, Outlet, Link } from "react-router-dom";
+import { useParams, NavLink, Outlet } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import BalanceOutlinedIcon from "@mui/icons-material/BalanceOutlined";
@@ -11,7 +11,7 @@ const Product = () => {
   const [image, setImage] = useState("coverImg");
   const [quantity, setQuantity] = useState(1);
   const id = useParams().id;
-  const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
+  const { data, loading } = useFetch(`/products/${id}?populate=*`);
   const dispatch = useDispatch();
   console.log(data);
   const activeStyles = {
