@@ -21,6 +21,7 @@ const OrderItem = ({ order }) => {
                   width="75"
                   height="108"
                   src={process.env.REACT_APP_UPLOAD_URL + item.img.substring(8)}
+                  alt="product"
                 />
                 <div className="orders_item-meta">
                   <div className="order_item-title#">{item.title}</div>
