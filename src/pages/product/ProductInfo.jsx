@@ -6,18 +6,28 @@ const ProductInfo = () => {
 
   return (
     <div className="product-info-nav-info">
-      <h4>
-        care: <p>{data?.attributes?.desc?.care}</p>
-      </h4>
-      <h4>
-        color: <p>{data?.attributes?.desc?.color}</p>
-      </h4>
-      <h4>
+      <h1>
+        care: <span>{data?.attributes?.desc?.care}</span>
+      </h1>
+      <div
+        style={{ backgroundColor: "#6d6e6e", height: "2px", width: "100%" }}
+      />
+      <h1>
+        color: <span>{data?.attributes?.desc?.color}</span>
+      </h1>
+      <div
+        style={{
+          backgroundColor: "#6d6e6e",
+          height: "2px",
+          width: "100%",
+        }}
+      />
+      <h1>
         highlight:
         {data?.attributes?.desc?.hightlight?.split(" ").map((item) => {
-          return <p>{item}</p>;
+          return <span>{item}</span>;
         })}
-      </h4>
+      </h1>
     </div>
   );
 };
